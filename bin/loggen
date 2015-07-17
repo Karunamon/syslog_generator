@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+require 'syslog_generator'
+require 'trollop'
+
+opts = Trollop.options do
+  version 'log_generator v1.0.0 - Michael Parks <mparks@tkware.info>'
+  banner <<-EOS
+Generate random syslog lines according to the provided options.
+Absent any options, 100 lines of nonsense will be sent to the syslog port on localhost.
+
+Usage: loggen [options]
+
+Where [options] can be any of the following:
+  EOS
+  opt :count, 'Count of lines to generate. Set to -1 for infinite.', type: Integer, default: 100
+  opt :words, 'Words per line', type: Integer, default: 5
+  opt :progname, 'Program name attached to each log line', type: String, default: 'log_generator'
+  opt :test, 'Send lines to stdout rather than a remote server'
+  opt :server, 'Send lines to this remote server', type: String, default: 'localhost'
+  opt :facility, 'Syslog facility to use', type: String, default: 'local6'
+  opt :protocol, 'TCP or UDP', type: String, default: 'udp'
+  opt :port, 'Port number to send generated lines to', type: Integer, default: 514
+end
+
+logger = SyslogGenerator::Logger.new(opts)
+logger.start
