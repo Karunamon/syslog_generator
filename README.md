@@ -10,10 +10,11 @@ Install it by running:
 
 ## Usage
 
-After installing, simply run loggen. By default, it will send 100 lines of
-nonsense to your local machine on port 514/UDP.
+After installing, simply run `loggen`. By default, it will send 100 lines of
+nonsense to your local machine on port 514/UDP, the standard syslog port.
 
-Append --help for full usage information.
+Append `--help` for full usage information, including customizing the amount
+of data sent, ports to use, and other specifics.
 
 ## Contributing
 
