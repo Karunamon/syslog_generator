@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 require 'syslog_generator'
 require 'trollop'
-
+require 'syslog_generator/version'
 opts = Trollop.options do
-  version 'log_generator v1.0.0 - Michael Parks <mparks@tkware.info>'
+  version "loggen #{SyslogGenerator::VERSION} - Michael Parks <mparks@tkware.info>"
   banner <<-EOS
 Generate random syslog lines according to the provided options.
 Absent any options, 100 lines of nonsense will be sent to the syslog port on localhost.

@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["mparks@tkware.info"]
   spec.summary       = %q{Generates random syslog data for configuration testing}
   spec.description   = %q{Uses random_word to send configurable, nonsense syslog data at a server of your choice. Great for testing your logger configuration.}
-  spec.license       = "Apache License v2.0"
+  spec.license       = "Apache-2.0"
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -21,4 +21,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_runtime_dependency "random-word"
   spec.add_runtime_dependency "syslog_protocol"
+
+  spec.post_install_message = "Please use 'loggen' to access the functions of syslog_generator."
 end
