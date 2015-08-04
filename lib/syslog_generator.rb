@@ -2,7 +2,6 @@ require 'syslog_generator/version'
 require 'random-word'
 require 'syslog_protocol'
 require 'socket'
-require 'pry'
 # Initialize a new logger endpoint, setting up the appropriate socket from
 # the provided options.
 module SyslogGenerator
