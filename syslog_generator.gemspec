@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_runtime_dependency "random-word"
   spec.add_runtime_dependency "syslog_protocol"
+  spec.add_runtime_dependency "trollop"
 
   spec.post_install_message = "Please use 'loggen' to access the functions of syslog_generator."
 end
